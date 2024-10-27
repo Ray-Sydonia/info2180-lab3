@@ -5,6 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     squares.forEach((square, index) => {
         square.classList.add("square");
+
+        square.addEventListener("mouseover", () => {
+            square.classList.add("hover");
+        });
+
+        square.addEventListener("mouseout", () => {
+            square.classList.remove("hover"); 
+        });
+
         square.addEventListener("click", () => {
             if (!gameState[index]) {
                 gameState[index] = currentPlayer;
